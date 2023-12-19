@@ -120,3 +120,21 @@ Pixel **rotateClockwise(Pixel **image, int height, int width) {
         return NULL;
     }
 
+    for (int i = 0; i < width; ++i) {
+        rotatedImage[i] = (Pixel *)malloc(sizeof(Pixel) * height);
+        if (!rotatedImage[i]) {
+            
+            for (int j = 0; j < i; ++j) {
+                free(rotatedImage[j]);
+            }
+            free(rotatedImage);
+            return NULL;
+        }
+
+        for (int j = 0; j < height; ++j) {
+            rotatedImage[i][j] = image[height - 1 - j][i];
+        }
+    }
+
+    return rotatedImage;
+}

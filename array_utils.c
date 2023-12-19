@@ -19,3 +19,22 @@ int containsWithin(const int *arr, int size, int x, int i, int j) {
 }
 
 //place your function definitions here
+int *paddedCopy(const int *arr, int oldSize, int newSize) {
+    int *newArr = (int *)malloc(sizeof(int) * newSize);
+    if (!newArr) {
+        
+        return NULL;
+    }
+
+    int minSize = (oldSize < newSize) ? oldSize : newSize;
+
+    for (int i = 0; i < minSize; ++i) {
+        newArr[i] = arr[i];
+    }
+
+    for (int i = minSize; i < newSize; ++i) {
+        newArr[i] = 0;  
+    }
+
+    return newArr;
+}

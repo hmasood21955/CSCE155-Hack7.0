@@ -61,6 +61,11 @@ void saveImage(const char *fileName, Pixel **image, int height, int width) {
 
 Pixel ** copyImage(Pixel **image, int height, int width) {
   //TODO: implement
+Pixel **copyImage(Pixel **image, int height, int width) {
+    Pixel **newImage = (Pixel **)malloc(sizeof(Pixel *) * height);
+    if (!newImage) {
+        return NULL;
+    }
 }
 
 void flipHorizontal(Pixel **image, int height, int width) {

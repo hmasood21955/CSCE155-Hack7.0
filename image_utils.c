@@ -90,6 +90,13 @@ Pixel **copyImage(Pixel **image, int height, int width) {
 void flipHorizontal(Pixel **image, int height, int width) {
   //TODO: implement
   return;
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width / 2; ++j) {
+            Pixel temp = image[i][j];
+            image[i][j] = image[i][width - 1 - j];
+            image[i][width - 1 - j] = temp;
+        }
+    }
 }
 
 void flipVertical(Pixel **image, int height, int width) {

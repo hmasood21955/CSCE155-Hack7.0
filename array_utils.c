@@ -46,3 +46,16 @@ void reverse(int *arr, int size) {
     }
 }
 
+int *reverseCopy(const int *arr, int size) {
+    int *newArr = (int *)malloc(sizeof(int) * size);
+    if (!newArr) {
+      
+        return NULL;
+    }
+
+    for (int i = 0; i < size; ++i) {
+        newArr[i] = arr[size - 1 - i];
+    }
+
+    return newArr;
+}

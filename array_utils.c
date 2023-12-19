@@ -38,3 +38,11 @@ int *paddedCopy(const int *arr, int oldSize, int newSize) {
 
     return newArr;
 }
+void reverse(int *arr, int size) {
+    for (int i = 0; i < size / 2; ++i) {
+        int temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+}
+

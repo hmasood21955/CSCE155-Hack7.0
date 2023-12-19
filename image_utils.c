@@ -114,3 +114,9 @@ void flipVertical(Pixel **image, int height, int width) {
 Pixel ** rotateClockwise(Pixel **image, int height, int width) {
   //TODO: implement
 }
+Pixel **rotateClockwise(Pixel **image, int height, int width) {
+    Pixel **rotatedImage = (Pixel **)malloc(sizeof(Pixel *) * width);
+    if (!rotatedImage) {
+        return NULL;
+    }
+
